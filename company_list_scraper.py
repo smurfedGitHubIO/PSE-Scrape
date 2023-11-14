@@ -4,6 +4,9 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+import pyautogui
+
 url = "https://edge.pse.com.ph/otherReports/form.do"
 
 driver = webdriver.Chrome()
@@ -26,7 +29,17 @@ time.sleep(2)
 findtable = driver.find_element(By.XPATH, f"/html/body/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/a")
 findtable.click()
 
+time.sleep(2)
+#findCount = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/label")
+#print(findCount.text)
 ## /html/body/div[2]/div[2]/p[2]/select/ <- select last option
+
+pyautogui.press(['alt', 'tab'])
+pyautogui.press(['tab', 'down', 'tab', 'enter'])
+
+# time.sleep(2)
+# downloadButton = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/a")
+# downloadButton.click()
 ## /html/body/div[2]/div[2]/p[2]/a <- download button
 
 ## next next step

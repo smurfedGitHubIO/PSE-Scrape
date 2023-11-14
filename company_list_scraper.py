@@ -29,18 +29,28 @@ time.sleep(2)
 findtable = driver.find_element(By.XPATH, f"/html/body/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/a")
 findtable.click()
 
-time.sleep(2)
-#findCount = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/label")
-#print(findCount.text)
 ## /html/body/div[2]/div[2]/p[2]/select/ <- select last option
+for handle in driver.window_handles:
+    print(handle)
+    driver.switch_to.window(handle)
 
-pyautogui.press(['alt', 'tab'])
-pyautogui.press(['tab', 'down', 'tab', 'enter'])
-
+time.sleep(2)
+findCount = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/label")
+print(findCount.text)
+# pyautogui.press(['alt', 'tab'])
+# time.sleep(15)
+time.sleep(2)
+select = driver.find_element(By.ID, "file_list")
+select.click()
+for i in range(int(findCount.text[-2])):
+    select.send_keys(Keys.DOWN)
+    time.sleep(2)
+select.click()
+time.sleep(2)
 # time.sleep(2)
-# downloadButton = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/a")
-# downloadButton.click()
+downloadButton = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/a")
+downloadButton.click()
 ## /html/body/div[2]/div[2]/p[2]/a <- download button
-
+# driver.quit()
 ## next next step
 ## get access to the next button something idk

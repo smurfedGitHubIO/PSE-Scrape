@@ -19,8 +19,9 @@ button.click()
 ## next step
 ## click all the links on the current page
 # for i in range(50):
-#findtable = driver.find_element(By.XPATH, f"/html/body/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/a")
-#findtable.click()
+time.sleep(2)
+findtable = driver.find_element(By.XPATH, f"/html/body/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/a")
+findtable.click()
 
 ## next next step
 ## get access to the next button something idk

@@ -2,6 +2,8 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 url = "https://edge.pse.com.ph/otherReports/form.do"
 
 driver = webdriver.Chrome()
@@ -13,6 +15,7 @@ agreeButton.click()
 time.sleep(2)
 typeMe = driver.find_element(By.ID, "tmplNm")
 typeMe.send_keys("information statement")
+# waitt = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "btnSearch"))).click()
 time.sleep(2)
 button = driver.find_element(By.ID, "btnSearch")
 button.click()
@@ -22,6 +25,9 @@ button.click()
 time.sleep(2)
 findtable = driver.find_element(By.XPATH, f"/html/body/div[2]/div[2]/div/table/tbody/tr[1]/td[2]/a")
 findtable.click()
+
+## /html/body/div[2]/div[2]/p[2]/select/ <- select last option
+## /html/body/div[2]/div[2]/p[2]/a <- download button
 
 ## next next step
 ## get access to the next button something idk

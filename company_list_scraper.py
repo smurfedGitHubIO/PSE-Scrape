@@ -36,7 +36,7 @@ for handle in driver.window_handles:
 
 time.sleep(2)
 findCount = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/label")
-print(findCount.text)
+print(findCount.text, "wala ba")
 # pyautogui.press(['alt', 'tab'])
 # time.sleep(15)
 time.sleep(2)

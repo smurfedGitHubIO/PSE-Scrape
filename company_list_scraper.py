@@ -33,10 +33,10 @@ findtable.click()
 for handle in driver.window_handles:
     print(handle)
     driver.switch_to.window(handle)
-
 time.sleep(2)
 findCount = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/label")
-print(findCount.text, "wala ba")
+attachmentCount = findCount.text
+print(int(attachmentCount[attachmentCount.find('(')+1:-1]))
 # pyautogui.press(['alt', 'tab'])
 # time.sleep(15)
 time.sleep(2)
@@ -50,6 +50,12 @@ time.sleep(2)
 # time.sleep(2)
 downloadButton = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/a")
 downloadButton.click()
+time.sleep(20)
+downloadButton.send_keys(Keys.ESCAPE)
+time.sleep(1)
+for i in range(9):
+    time.sleep(1)
+    downloadButton.send_keys(Keys.TAB)
 ## /html/body/div[2]/div[2]/p[2]/a <- download button
 # driver.quit()
 ## next next step

@@ -36,26 +36,27 @@ for handle in driver.window_handles:
 time.sleep(2)
 findCount = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/label")
 attachmentCount = findCount.text
-print(int(attachmentCount[attachmentCount.find('(')+1:-1]))
+counter = int(attachmentCount[attachmentCount.find('(')+1:-1])
 # pyautogui.press(['alt', 'tab'])
 # time.sleep(15)
-time.sleep(2)
-select = driver.find_element(By.ID, "file_list")
-select.click()
-for i in range(int(findCount.text[-2])):
-    select.send_keys(Keys.DOWN)
+for i in range(counter):
     time.sleep(2)
-select.click()
-time.sleep(2)
-# time.sleep(2)
-downloadButton = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/a")
-downloadButton.click()
-time.sleep(20)
-downloadButton.send_keys(Keys.ESCAPE)
-time.sleep(1)
-for i in range(9):
+    select = driver.find_element(By.ID, "file_list")
+    select.click()
+    for i in range(int(findCount.text[-2])):
+        select.send_keys(Keys.DOWN)
+        time.sleep(2)
+    select.click()
+    time.sleep(2)
+    # time.sleep(2)
+    downloadButton = driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/p[2]/a")
+    downloadButton.click()
+    time.sleep(20)
+    downloadButton.send_keys(Keys.ESCAPE)
     time.sleep(1)
-    downloadButton.send_keys(Keys.TAB)
+    for i in range(9):
+        time.sleep(1)
+        downloadButton.send_keys(Keys.TAB)
 ## /html/body/div[2]/div[2]/p[2]/a <- download button
 # driver.quit()
 ## next next step

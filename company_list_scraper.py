@@ -57,8 +57,4 @@ for i in range(counter):
     for i in range(9):
         time.sleep(1)
         downloadButton.send_keys(Keys.TAB)
-## /html/body/div[2]/div[2]/p[2]/a <- download button
-# driver.quit()
-## next next step
-## get access to the next button something idk
-## tomorrow na to
+## will test and add something
